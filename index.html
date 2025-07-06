@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Geneve's Herb Database</title>
+  <script src="./herbdb.js"
+</head>
+<body>
+  <p>
+    This database has information on the following herbs.
+    Select the herb to go to its article page.
+  </p>
+  Herb Articles: 
+  <select id="selHerbs"
+    title="select an herb to see it's article page."
+    onchange="eh_onHerbArticleChanged();">
+    <option>Plantain</option>
+  </select>
+  <br>
+  <p>
+    One of the most essential thins to know about plants aside from identification is their propertise.
+    So let's start with a list of those.
+  </p>
+  <p>
+    You will notice that multiple herbs have <i>
+      multiple properties.
+    </i>
+    Some are listed on almost all of them.
+  </p>
+  <p>
+    It cannot be stressed how important it is that you learn and know these terms.
+    You will be using some of them a great deal.
+    Select a property to go to a page that explains it and lists the herbs
+    that have that property.
+  </p>
+  Herb Properties:
+  <select id="selHerbProps"
+    title="select a property to see it's article page."
+    onchange="eh_onHerbPropChanged();">
+    <option>Absorbents</option>
+    <option>Alteratives</option>
+    <option>Analgesics</option>
+    <option>Anaphrodisiacs</option>
+    <option>Antacids</option>
+    <option>Anthelmintics</option>
+    <option>Antiabortives</option>
+    <option>Antiarthritics</option>
+    <option>Antiasthmatics</option>
+    <option>Antibilious</option>
+    <option>Anticatarrhals</option>
+    <option>Antiemetics</option>
+    <option>Antihydropics</option>
+    <option>Antilithics</option>
+    <option>Antiperiodics</option>
+    <option>Antipyretics</option>
+    <option>Antirheumatics</option>
+    <option>Antiscorbutics</option>
+    <option>Antiscrofulous</option>
+    <option>Antiseptics</option>
+    <option>Antispasmodics</option>
+    <option>Antisyphlitics</option>
+    <option>Antivenomous</option>
+    <option>Antizymot or Laxatives</option>
+    <option>Aromatics</option>
+    <option>Astringents</option>
+    <option>Aphrodisiacs</option>
+    <option>Balsamic</option>
+    <option>Bitters</option>
+    <option>Blisters</option>
+    <option>Calefacients</option>
+    <option>Cardiac Depressants</option>
+    <option>Cardiac Stimulants</option>
+    <option>Carminatives</option>
+    <option>Cathartics</option>
+    <option>Caustics</option>
+    <option>Cell Proliferants</option>
+    <option>Cephalics</option>
+    <option>Cholagogues</option>
+    <option>Condiments</option>
+    <option>Coloring Agents</option>
+    <option>Cordials</option>
+    <option>Correctives</option>
+    <option>Cosmetics</option>
+    <option>Counter Irritants</option>
+    <option>Demulcents</option>
+    <option>Dental Anodynes</option>
+    <option>Deobstruents</option>
+    <option>Deodorants</option>
+    <option>Depresso Motors</option>
+    <option>Depurants</option>
+    <option>Dessicants</option>
+    <option>Detergents</option>
+    <option>Diaphoretics</option>
+    <option>Digestants</option>
+    <option>Diluents</option>
+    <option>Discutients</option>
+    <option>Disinfectants</option>
+    <option>Diuretics</option>
+    <option>Drastics</option>
+    <option>Emetics</option>
+    <option>Emmenogogues</option>
+    <option>Emollients</option>
+    <option>Errhines</option>
+    <option>Exanthematous</option>
+    <option>Excito Motors</option>
+    <option>Expectorants</option>
+    <option>Febrifuges</option>
+    <option>Galactagogues</option>
+    <option>Galactophyga</option>
+    <option>Hemetics</option>
+    <option>Hemostatics</option>
+    <option>Hemostatics</option>
+    <option>Hepatics</option>
+    <option>Herpatics</option>
+    <option>Hypnotics</option>
+    <option>Insecticides</option>
+    <option>Irritants</option>
+    <option>Lithotriptics</option>
+    <option>Local Anaesthetics</option>
+    <option>Maturating</option>
+    <option>Mucilages</option>
+    <option>Mydriatics</option>
+    <option>Myotics</option>
+    <option>Harcotics</option>
+    <option>Nauseants</option>
+    <option>Nephritics</option>
+    <option>Nervines</option>
+    <option>Nutriatives</option>
+    <option>Ophthalmics</option>
+    <option>Parasiticides</option>
+    <option>Parturients</option>
+    <option>Pectorals</option>
+    <option>Peristaltics</option>
+    <option>Protectives</option>
+    <option>Pungents</option>
+    <option>Refrierants</option>
+    <option>Resolvents</option>
+    <option>Rubefacients</option>
+    <option>Sedatives</option>
+    <option>Sialagogues</option>
+    <option>Soporifics</option>
+    <option>Sternutatories</option>
+    <option>Stimulants</option>
+    <option>Stomachics</option>
+    <option>Styptics</option>
+    <option>Sudorifics</option>
+    <option>Taeniafuges/cides</option>
+    <option>Tonics</option>
+    <option>Vulneraries</option>
+  </select>
+</body>
+</html>
