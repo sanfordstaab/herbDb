@@ -1,11 +1,12 @@
 // herbdb.js
 
 function termToURL(term, type) {
-  return `${
+  const url = `${
     term.toLowerCase().replace(/ /g, '_')
    }_${
     type
    }.html`;
+  return url;
 }
 
 function eh_onHerbArticleChanged(event) {

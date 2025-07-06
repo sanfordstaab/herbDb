@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8" />
-  <title>Geneve's Herb Database</title>
-  <script src="./herbdb.js"
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Geneve's Herb Database</title>
+    <script src="./herbdb.js"></script>
+  </head>
+
 <body>
   <p>
     This database has information on the following herbs.
@@ -13,7 +14,7 @@
   Herb Articles: 
   <select id="selHerbs"
     title="select an herb to see it's article page."
-    onchange="eh_onHerbArticleChanged();">
+    onchange="eh_onHerbArticleChanged(event);">
     <option>Plantain</option>
   </select>
   <br>
@@ -36,7 +37,7 @@
   Herb Properties:
   <select id="selHerbProps"
     title="select a property to see it's article page."
-    onchange="eh_onHerbPropChanged();">
+    onchange="eh_onHerbPropChanged(event);">
     <option>Absorbents</option>
     <option>Alteratives</option>
     <option>Analgesics</option>
