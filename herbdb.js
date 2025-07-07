@@ -9,43 +9,47 @@ function onHomePageLoad() {
  * 
  * @param {string} term to start URL with
  * @param {string} type: article, property, definition ...
+ * @param {string} root: usually '' or '../'
  * @returns 
  */
-function termToURL(term, type) {
-  const url = `${type}s/${
-    term.toLowerCase().replace(/ /g, '_')
-   }.html`;
-  return url;
+function termToURL(term, type, root='') {
+  return `${root}${type}s/${
+      term.toLowerCase().replace(/ /g, '_')
+    }.html`;
 }
 
-function openWindowThing(selId, type) {
-  window.open(
-    termToURL(
-      ge(selId).value, 
-      type
-    ), 
-    'home' // target
-  );
+/**
+ * Used to get to the URL to links within detail pages.
+ * This puts the calculation into one place making movement
+ * of files easier if we need to.
+ * @param {string} term to start URL with
+ * @param {string} type: article, property, definition ...
+ * @param {string} root: usually '' or '../'
+ */
+function eh_gurl(term, type, root='../') {
+  const openUrl = termToURL(term, type, root);
+  window.open(openUrl, '_self');
+  return false; // prevent default href use
 }
 
-function eh_openHerbArticle() {
-  openWindowThing('selHerbs', 'article');
+function eh_openHerbArticle(root='../') {
+  return eh_gurl(ge('selHerbs').value, 'article', root);
 }
 
-function eh_goToPropHerb() {
-  openWindowThing('selHerbsWithProp', 'article');
+function eh_goToPropHerb(root='../') {
+   return eh_gurl(ge('selHerbsWithProp').value, 'article', root);
 }
 
-function eh_openHerbProperty(event) {
-  openWindowThing('selHerbProps', 'property');
+function eh_openHerbProperty(root='../') {
+  return  eh_gurl(ge('selHerbProps').value, 'property', root);
 }
 
-function eh_openHerbGlossary(event) {
-  openWindowThing('selGlossary', 'definition');
+function eh_openHerbGlossary(root='../') {
+  return eh_gurl(ge('selGlossary').value, 'definition', root);
 }
 
-function selHerbsWithRecipe(event) {
-  openWindowThing('selHerbsWithRecipe', 'recipe');
+function selHerbsWithRecipe(root='../') {
+   return eh_gurl(ge('selHerbsWithRecipe').value, 'recipe', root);
 }
 
 /**
