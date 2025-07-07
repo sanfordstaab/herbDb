@@ -1,0 +1,73 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* tag styles */
+body {
+  font-family: Arial;
+  font-weight: normal;
+  position: relative;
+  margin: 0px;
+  padding: 5em;
+  background-color: rgb(155, 155, 208);
+}
+
+.bdr {
+  border: black solid 1px
+}
+
+.ctr {
+  margin: auto;
+}
+
+.ac {
+  text-align: center;
+}
+
+.maxwidth800 {
+  max-width: 800px;
+}
+
+
+.bgPage {
+  background-color: beige;
+}
+
+.bgArticlePage {
+  background-color: rgb(204, 234, 174);
+}
+
+.bgGlossaryPage {
+  background-color: rgb(190, 188, 130);
+}
+
+.bgPropertyPage {
+  background-color: rgb(223, 206, 174);
+}
+
+.smaller {
+  font-size: smaller;
+}
+
+.smallImg {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.m0 {
+  margin: 0px;
+}
+
+.m1em {
+  margin: 1em;
+}
+
+.p2em {
+  padding: 2em;
+}
+
+.p1em {
+  padding: 1em;
+}
