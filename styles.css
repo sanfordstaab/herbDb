@@ -47,6 +47,10 @@ body {
   background-color: rgb(223, 206, 174);
 }
 
+.bgDefinitionPage {
+  background-color: rgb(188, 130, 130);
+}
+
 .bgLargePhotoPage {
   background-color: rgb(234, 235, 177);
 }

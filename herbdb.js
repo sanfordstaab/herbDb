@@ -12,10 +12,8 @@ function onHomePageLoad() {
  * @returns 
  */
 function termToURL(term, type) {
-  const url = `${
+  const url = `${type}s/${
     term.toLowerCase().replace(/ /g, '_')
-   }_${
-    type
    }.html`;
   return url;
 }
