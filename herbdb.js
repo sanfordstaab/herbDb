@@ -22,9 +22,11 @@ function termToURL(term, type, root='') {
  * Used to get to the URL to links within detail pages.
  * This puts the calculation into one place making movement
  * of files easier if we need to.
+ * Meant to be called from an anchor element like this:
+ * <a href="" onclick="return eh_gurl('emetic', 'property', '../');">
  * @param {string} term to start URL with
  * @param {string} type: article, property, definition ...
- * @param {string} root: usually '' or '../'
+ * @param {string=} root: usually '' or '../'
  */
 function eh_gurl(term, type, root='../') {
   const openUrl = termToURL(term, type, root);
