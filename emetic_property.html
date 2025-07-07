@@ -9,13 +9,20 @@
   <script src="./tools.js"></script>
 </head>
 <body>
-  <div class="bdr ctr maxwidth800 p2em bgArticlePage">
+  <div class="bdr ctr maxwidth800 p2em bgPropertyPage">
     <h1 class="ac">Emetic</h1>
     <h3 class="ac">Herb Property Page</h3>
     <br>
       <a href="./index.html" target="home">
         Go To Home Page
       </a>
+    <br>
+    <select id="selHerbsWithProp">
+      <option>Elderberry</option>
+    </select>    
+    <button onclick="eh_goToPropHerb();">
+      Go to the Herb article associated with this property
+    </button>      
       <br>
       <br>
       <!-- article goes here -->

@@ -30,6 +30,16 @@ function eh_openHerbArticle() {
   );
 }
 
+function eh_goToPropHerb() {
+    window.open(
+    termToURL(
+      ge('selHerbsWithProp').value, 
+      'article'
+    ), 
+    'home' // target
+  );
+}
+
 function eh_openHerbProperty(event) {
   window.open(
     termToURL(
