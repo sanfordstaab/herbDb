@@ -26,7 +26,7 @@ function eh_openHerbArticle() {
       ge('selHerbs').value, 
       'article'
     ), 
-    'article' // target
+    'home' // target
   );
 }
 
@@ -36,7 +36,7 @@ function eh_openHerbProperty(event) {
       ge('selHerbProps').value, 
       'property'
     ), 
-    'property' // target
+    'home' // target
   );
 }
 
@@ -46,7 +46,7 @@ function eh_openHerbGlossary(event) {
       ge('selGlossary').value, 
       'definition'
     ), 
-    'definiton' // target
+    'home' // target
   );
 }
 
