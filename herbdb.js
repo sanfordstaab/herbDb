@@ -1,6 +1,7 @@
 // herbdb.js
 
-function onPageLoad() {
+function onHomePageLoad() {
+  window.name = 'home';
   // generateAllPropertyFiles();
 }
 
