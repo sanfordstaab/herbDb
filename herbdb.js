@@ -20,44 +20,34 @@ function termToURL(term, type) {
   return url;
 }
 
-function eh_openHerbArticle() {
+function openWindowThing(selId, type) {
   window.open(
     termToURL(
-      ge('selHerbs').value, 
-      'article'
+      ge(selId).value, 
+      type
     ), 
     'home' // target
   );
+}
+
+function eh_openHerbArticle() {
+  openWindowThing('selHerbs', 'article');
 }
 
 function eh_goToPropHerb() {
-    window.open(
-    termToURL(
-      ge('selHerbsWithProp').value, 
-      'article'
-    ), 
-    'home' // target
-  );
+  openWindowThing('selHerbsWithProp', 'article');
 }
 
 function eh_openHerbProperty(event) {
-  window.open(
-    termToURL(
-      ge('selHerbProps').value, 
-      'property'
-    ), 
-    'home' // target
-  );
+  openWindowThing('selHerbProps', 'property');
 }
 
 function eh_openHerbGlossary(event) {
-  window.open(
-    termToURL(
-      ge('selGlossary').value, 
-      'definition'
-    ), 
-    'home' // target
-  );
+  openWindowThing('selGlossary', 'definition');
+}
+
+function selHerbsWithRecipe(event) {
+  openWindowThing('selHerbsWithRecipe', 'recipe');
 }
 
 /**
