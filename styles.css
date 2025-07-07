@@ -30,6 +30,9 @@ body {
   max-width: 800px;
 }
 
+.warning {
+  color: rgb(194, 0, 0);
+}
 
 .bgHomePage {
   background-color: rgb(176, 160, 242);
@@ -44,7 +47,7 @@ body {
 }
 
 .bgPropertyPage {
-  background-color: rgb(223, 206, 174);
+  background-color: rgb(229, 182, 96);
 }
 
 .bgDefinitionPage {
@@ -55,8 +58,12 @@ body {
   background-color: rgb(234, 235, 177);
 }
 
-.btRecipePage {
+.bgRecipePage {
   background-color: rgb(227, 197, 152);
+}
+
+.bgAilmentPage {
+  background-color: rgb(222, 100, 187);
 }
 
 .bgHarvest {
