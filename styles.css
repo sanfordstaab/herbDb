@@ -34,6 +34,10 @@ body {
   color: rgb(194, 0, 0);
 }
 
+.note {
+  color:rgb(48, 121, 44)
+}
+
 .bgHomePage {
   background-color: rgb(176, 160, 242);
 }

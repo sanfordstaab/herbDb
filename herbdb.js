@@ -1,5 +1,9 @@
 // herbdb.js
 
+const symbols = {
+  degree: '&deg;'
+}
+
 function onHomePageLoad() {
   window.name = 'home';
   // generateAllPropertyFiles();
