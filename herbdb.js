@@ -31,8 +31,8 @@ function termToURL(term, type, root='') {
  * @param {string=} root: usually '' or '../'
  */
 function gu(term, type, root='../') {
-  const openUrl = termToURL(term, type, root);
-  window.open(openUrl, '_self');
+  const myOpenUrl = termToURL(term, type, root);
+  window.open(myOpenUrl, '_self');
   return false; // prevent default href use
 }
 
@@ -42,6 +42,10 @@ function eh_openHerbArticle(root='../') {
 
 function eh_goToPropHerb(root='../') {
    return gu(ge('selHerbsWithProp').value, 'article', root);
+}
+
+function eh_goToRecipeHerb(root='../') {
+   return gu(ge('selHerbsWithRecipe').value, 'article', root);
 }
 
 function eh_openHerbProperty(root='../') {
