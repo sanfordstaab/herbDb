@@ -20,38 +20,40 @@ function termToURL(term, type, root='') {
 
 /**
  * Used to get to the URL to links within detail pages.
+ * gu stands for "go to url".
  * This puts the calculation into one place making movement
- * of files easier if we need to.
- * Meant to be called from an anchor element like this:
- * <a href="" onclick="return eh_gurl('emetic', 'property', '../');">
+ * of files easier if we need to and enforces consistency.
+ * This event handler is meant to be called from an anchor 
+ * element like this:
+ * <a href="" onclick="return gu('emetic', 'property', '../');">
  * @param {string} term to start URL with
  * @param {string} type: article, property, definition ...
  * @param {string=} root: usually '' or '../'
  */
-function eh_gurl(term, type, root='../') {
+function gu(term, type, root='../') {
   const openUrl = termToURL(term, type, root);
   window.open(openUrl, '_self');
   return false; // prevent default href use
 }
 
 function eh_openHerbArticle(root='../') {
-  return eh_gurl(ge('selHerbs').value, 'article', root);
+  return gu(ge('selHerbs').value, 'article', root);
 }
 
 function eh_goToPropHerb(root='../') {
-   return eh_gurl(ge('selHerbsWithProp').value, 'article', root);
+   return gu(ge('selHerbsWithProp').value, 'article', root);
 }
 
 function eh_openHerbProperty(root='../') {
-  return  eh_gurl(ge('selHerbProps').value, 'property', root);
+  return  gu(ge('selHerbProps').value, 'property', root);
 }
 
 function eh_openHerbGlossary(root='../') {
-  return eh_gurl(ge('selGlossary').value, 'definition', root);
+  return gu(ge('selGlossary').value, 'definition', root);
 }
 
 function selHerbsWithRecipe(root='../') {
-   return eh_gurl(ge('selHerbsWithRecipe').value, 'recipe', root);
+   return gu(ge('selHerbsWithRecipe').value, 'recipe', root);
 }
 
 /**
