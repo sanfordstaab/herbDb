@@ -18,7 +18,7 @@ function onHomePageLoad() {
  */
 function termToURL(term, type, root='') {
   return `${root}${type}s/${
-      term.toLowerCase().replace(/ /g, '_')
+      term.toLowerCase().replace(/,/g, '').replace(/ /g, '_')
     }.html`;
 }
 
@@ -62,6 +62,14 @@ function eh_openHerbGlossary(root='../') {
 
 function selHerbsWithRecipe(root='../') {
    return gu(ge('selHerbsWithRecipe').value, 'recipe', root);
+}
+
+function eh_openHerbRecipe(root='../') {
+  return gu(ge('selRecipes').value, 'recipe', root);
+}
+
+function eh_openHerbAilment(root='../') {
+  return gu(ge('selAilments').value, 'ailment', root);
 }
 
 /**

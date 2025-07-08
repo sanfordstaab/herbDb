@@ -13,26 +13,47 @@
   <div class="bdr ctr maxwidth800 p2em bgHomePage">
     <h1 class="ac">Geneve's Herb Database</h1>
     <h3 class="ac">Home Page</h3>
-    <p>
-      This database has information on the following herbs.
-      Select the herb to go to its article page.
-    </p>
-    Herb Articles: 
-    <select id="selHerbs"
-      title="select an herb to see it's article page.">
-      <option>Elderberry</option>
-      <option>Plantain</option>
-    </select>
-    <button onclick="eh_openHerbArticle('');">
-      Go to herb article
-    </button>
-    <br>
-    <p>
-      One of the most essential things to know about plants aside from identification is their propertise.
-      So let's start with a list of those.
-    </p>
-    Herb Properties:
-    <select id="selHerbProps"
+    <fieldset class="">
+      <legend>
+        How this database works
+      </legend>
+      This database consists of a web of pages that can be referenced by various
+      categorized lists and which cross-link to each other.
+      This home page is where you can browse any of these pages via various
+      lists which you can then follow to learn whatever you like.
+    </fieldset>
+
+    <fieldset class="bgArticlePage">
+      <legend>
+        Articles
+      </legend>
+      Articles are pages mostly about a specific herb but can also contain
+      pages on any herb-related subject.
+      <br>
+      <select id="selHerbs"
+        title="select an herb to see it's article page.">
+        <option>Elderberry</option>
+        <option>Plantain</option>
+      </select>
+      &nbsp;
+      <button onclick="eh_openHerbArticle('');">
+        Go to herb article
+      </button>
+    </fieldset>
+
+    <fieldset class="bgPropertyPage">
+      <legend>
+        Properties
+      </legend>
+      Properties are things which herbs posess.
+      An herb may have many properties and many herbs may affect the same property.
+      <br>
+      This is a large list.
+      Large lists may have a filter field that helps you find what your are looking for.
+      When text is entered into a filter field, the list is limited to only names that
+      contain the filter text.  Clearing the filter restores the full list to select from.
+      <br>
+      <select id="selHerbProps"
       title="select a property to see it's article page.">
       <option>Absorbent</option>
       <option>Alterative</option>
@@ -145,37 +166,82 @@
       <option>Taeniafuges/cide</option>
       <option>Tonic</option>
       <option>Vulnerarie</option>
-    </select>
-    <button onclick="eh_openHerbProperty('');">
-      Go to property page
-    </button>
-    <br>
-    <p>
-      You will notice that multiple herbs have <i>
-        multiple properties.
-      </i>
-      Some are listed on almost all of them.
-    </p>
-    <p>
-      Select a property to go to a page that explains it and lists the herbs
-      that have that property.
-    </p>
-    <p>
-      We also have a glossary of terms.      
-      It cannot be stressed how important it is that you learn and know these terms.
-      You will be using some of them a great deal.</p>
-    <br>
-    Glossary:
-    <select id="selGlossary">
-      <option>Asthma</option>
-      <option>Dropsy</option>
-      <option>Jaundice</option>
-      <option>Mucus</option>
-      <option>Phlegm</option>
-    </select>
-    <button onclick="eh_openHerbGlossary('');">
-      Go to definition
-    </button>
+      </select>
+      &nbsp;
+      <button onclick="eh_openHerbProperty('');">
+        Go to property page
+      </button>
+      &nbsp;
+      <input 
+        type="text" 
+        placeholder="List Filter" 
+        onkeyup="onPropertyFilterChanged();" 
+        onchange="onPropertyFilterChanged();"/>
+    </fieldset>
+
+    <fieldset class="bgDefinitionPage">
+      <legend>
+        Definitions
+      </legend>
+      There are many technical terms referenced in our articles 
+      that are not propertys of herbs but nonetheless need to be defined.
+      This list is a glossery of terms we think some people may 
+      not understand so they are contained here.
+      <br>
+      <select id="selGlossary">
+        <option>Asthma</option>
+        <option>Dropsy</option>
+        <option>Jaundice</option>
+        <option>Mucus</option>
+        <option>Phlegm</option>
+      </select>
+      <button onclick="eh_openHerbGlossary('');">
+        Go to definition
+      </button>
+    </fieldset>
+
+    <fieldset class="bgAilmentPage">
+      <legend>
+        Ailments
+      </legend>
+      Ailment pages help you find out what herbs address a particular 
+      ailment either supportively or adversely.
+      <br>
+      <select id="selAilments">
+        <option>To Do</option>
+      </select>
+      <button onclick="eh_openHerbAilment('');">
+        Go to ailment page
+      </button>
+    </fieldset>
+
+    <fieldset class="bgRecipePage">
+      <legend>
+        Recipes
+      </legend>
+      Most herbs have related recipes.  
+      You can look up those pages here.
+            <br>
+      <select id="selRecipes">
+        <option>Elder bark infusion</option>
+        <option>Elder leaf ointment for bruises sprains and such</option>
+        <option>Elderberry for colds flus hay fever and sinissitis</option>
+        <option>Elderberry for rhumatic complaints</option>
+        <option>Elderberry for use in bowel cleansing or purging</option>
+        <option>Elderberry glycerite for sore throats and coughs</option>
+        <option>Elderberry Oatmeal soap for dry scaly skin</option>
+        <option>Elderberry syrup for colds</option>
+        <option>Elderflower cordial</option>
+        <option>elderflower glycerite</option>
+        <option>Elderflower miosture cream</option>
+        <option></option>
+      </select>
+      <button onclick="eh_openHerbRecipe('');">
+        Go to ailment page
+      </button>
+    </fieldset>
+    </fieldset>
+
   </div>
 </body>
 </html>
