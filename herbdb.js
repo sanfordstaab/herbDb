@@ -10,7 +10,7 @@ function onHomePageLoad() {
 }
 
 /**
- * 
+ * This converts a text string like 'emetic (bark)' to 'emetic.html'
  * @param {string} term to start URL with
  * @param {string} type: article, property, definition ...
  * @param {string} root: usually '' or '../'
@@ -18,7 +18,12 @@ function onHomePageLoad() {
  */
 function termToURL(term, type, root='') {
   return `${root}${type}s/${
-      term.toLowerCase().replace(/,/g, '').replace(/ /g, '_')
+      term.toLowerCase().
+        replace(/\s*\(.*\)\s*/g, ' '). // ()s can be used to annotate the text but not effect the target url.
+        replace(/,/g, ''). // commas are allowed but don't effect the target url
+        replace(/^\s+/, ''). // remove spaces at the beginning
+        replace(/\s+$/, ''). // remove spaces at the end
+        replace(/ /g, '_') // _s replace spaces in the target url
     }.html`;
 }
 

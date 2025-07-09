@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8" />
-  <title>[herb] Article</title>
+  <titleElderberry Article</title>
   <link rel="stylesheet" href="../styles.css">
   <script src="../utils.js"></script>
   <script src="../herbdb.js"></script>
@@ -10,7 +10,7 @@
 </head>
 <body>
   <div class="bdr ctr maxwidth800 p2em bgArticlePage">
-    <h1 class="ac">[herb]</h1>
+    <h1 class="ac"Elderberry</h1>
     <h3 class="ac">Herb Article Page</h3>
     <br>
     <a href="../index.html" target="home">
@@ -19,22 +19,111 @@
     <br>
     <br>
     <!-- article goes here -->
-    <b>[herb]</b>
-    <br>
-    <br>
+<b>
+  Description: 
+</b>
+[description.] 
+<br>
+<b>
+  Blooms in:
+</b>
+[when.]
+<br>
+<b>
+  Proper Name: 
+</b> 
+<i>[names]</i>
+<br>
+<b>
+  Other Names: 
+</b>
+<i>[other names]</i>
+<br>
+<b>
+  Meridians affected: 
+</b>
+  [meridians]
+</b>
+<br>
+<b>
+  Parts used: 
+</b>
+[parts]
+<br>
+<br>
+<div class="bdr p1em bgHarvest">
+  <b>
+    When to Harvest:
+  </b>
+  <ul class="m0">
+    <li>
+      Part: <i>[When]</i>
+    </li>
+  </ul>
+  <br>
+  <div>
+    [Instructions]
+  </div>
+</div>
+<br>
+Photos::
+<br>
+<a href="../large-img.html?src=img/Model/1.jpg&plantName=Model">
+  <img class="smallImg" src="../img/Model/1.jpg"/>
+</a>
+&nbsp;
+<a href="../large-img.html?src=img/Model/2.jpg&plantName=Model">
+  <img class="smallImg" src="../img/Model/2.jpg"/>
+</a>
+<br>
+<br>
+<br>
+  [Article]
+<br>
+<fieldset class="bgLists">
+  <legend>
+    Lists for this herb
+  </legend>
+  <div class="p1em bgRecipePage">
+    Recipies:
     <select id="selHerbRecipies">
-      <option></option>
+      <option>Model</option>
     </select> 
     <button onclick="gu('selHerbRecipies', 'recipe');">
       Go to the recipe that uses this herb
     </button>
-    <br>
+  </div>
+  <br>
+  <div class="p1em bgPropertyPage">
+    Properties:
     <select id="selHerbProperties">
-      <option></option>
+      <option>Model</option>
     </select> 
     <button onclick="gu('selHerbProperties', 'property');">
       Go to the property associated with this herb
-    </button>    
+    </button>   
+  </div>
+  <br>
+  <div class="p1em bgAilmentPage">
+    Ailments:
+    <select id="selHerbAilments">
+      <option>Model</option>
+    </select> 
+    <button onclick="gu('selHerbAilments', 'ailment');">
+      Go to the ailment associated with this herb
+    </button>
+  </div>
+  <br>
+  <div class="p1em bgResourcePage">
+    Resources:
+    <select id="selHerbResources">
+      <option>Model</option>
+    </select> 
+    <button onclick="gu('selHerbResources', 'resource');">
+      Go to the resource associated with this herb
+    </button> 
+  </div>
+</fieldset>
   </div>
 </body>
 </html>

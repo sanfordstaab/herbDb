@@ -78,6 +78,10 @@ body {
   background-color: rgb(154, 199, 238);
 }
 
+.bgLists {
+  background-color: rgb(173, 248, 248);
+}
+
 .smaller {
   font-size: smaller;
 }
