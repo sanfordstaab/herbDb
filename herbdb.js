@@ -29,12 +29,19 @@ function termToURL(term, type, root='') {
  * of files easier if we need to and enforces consistency.
  * This event handler is meant to be called from an anchor 
  * element like this:
- * <a href="" onclick="return gu('emetic', 'property', '../');">
- * @param {string} term to start URL with
+ * <a href="" onclick="return gu('emetic', 'property', '');">
+ * This also works for selecting a target term from a select
+ * control of text terms.
+ * <button onclick="return gu('selId', 'property', '');">
+ * @param {string} term to start URL with or the id of a select control
  * @param {string} type: article, property, definition ...
- * @param {string=} root: usually '' or '../'
+ * @param {string=} root: usually '' or '../' by default
  */
 function gu(term, type, root='../') {
+  const elSel = ge(term);
+  if (elSel) {
+    term = elSel.value;
+  }
   const myOpenUrl = termToURL(term, type, root);
   window.open(myOpenUrl, '_self');
   return false; // prevent default href use
