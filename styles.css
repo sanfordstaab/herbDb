@@ -70,6 +70,10 @@ body {
   background-color: rgb(222, 100, 187);
 }
 
+.bgResourcePage {
+  background-color: rgb(244, 243, 185);
+}
+
 .bgHarvest {
   background-color: rgb(154, 199, 238);
 }

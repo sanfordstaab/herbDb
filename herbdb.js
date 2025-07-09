@@ -40,38 +40,6 @@ function gu(term, type, root='../') {
   return false; // prevent default href use
 }
 
-function eh_openHerbArticle(root='../') {
-  return gu(ge('selHerbs').value, 'article', root);
-}
-
-function eh_goToPropHerb(root='../') {
-   return gu(ge('selHerbsWithProp').value, 'article', root);
-}
-
-function eh_goToRecipeHerb(root='../') {
-   return gu(ge('selHerbsWithRecipe').value, 'article', root);
-}
-
-function eh_openHerbProperty(root='../') {
-  return  gu(ge('selHerbProps').value, 'property', root);
-}
-
-function eh_openHerbGlossary(root='../') {
-  return gu(ge('selGlossary').value, 'definition', root);
-}
-
-function selHerbsWithRecipe(root='../') {
-   return gu(ge('selHerbsWithRecipe').value, 'recipe', root);
-}
-
-function eh_openHerbRecipe(root='../') {
-  return gu(ge('selRecipes').value, 'recipe', root);
-}
-
-function eh_openHerbAilment(root='../') {
-  return gu(ge('selAilments').value, 'ailment', root);
-}
-
 /**
  * Sets ge(targetId)[attr] = value of URL paramName
  * @param {string} targetId - element id to set attr 

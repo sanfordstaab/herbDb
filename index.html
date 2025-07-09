@@ -13,7 +13,7 @@
   <div class="bdr ctr maxwidth800 p2em bgHomePage">
     <h1 class="ac">Geneve's Herb Database</h1>
     <h3 class="ac">Home Page</h3>
-    <fieldset class="">
+    <fieldset class="m1em">
       <legend>
         How this database works
       </legend>
@@ -23,25 +23,25 @@
       lists which you can then follow to learn whatever you like.
     </fieldset>
 
-    <fieldset class="bgArticlePage">
+    <fieldset class="bgArticlePage m1em">
       <legend>
         Articles
       </legend>
       Articles are pages mostly about a specific herb but can also contain
       pages on any herb-related subject.
       <br>
-      <select id="selHerbs"
+      <select id="selHerbArticles"
         title="select an herb to see it's article page.">
         <option>Elderberry</option>
         <option>Plantain</option>
       </select>
       &nbsp;
-      <button onclick="eh_openHerbArticle('');">
+      <button onclick="return gu(ge('selHerbArticles').value, 'article', '');;">
         Go to herb article
       </button>
     </fieldset>
 
-    <fieldset class="bgPropertyPage">
+    <fieldset class="bgPropertyPage m1em">
       <legend>
         Properties
       </legend>
@@ -168,7 +168,7 @@
       <option>Vulnerarie</option>
       </select>
       &nbsp;
-      <button onclick="eh_openHerbProperty('');">
+      <button onclick="return  gu(ge('selHerbProps').value, 'property', '');('');">
         Go to property page
       </button>
       &nbsp;
@@ -179,7 +179,7 @@
         onchange="onPropertyFilterChanged();"/>
     </fieldset>
 
-    <fieldset class="bgDefinitionPage">
+    <fieldset class="bgDefinitionPage m1em">
       <legend>
         Definitions
       </legend>
@@ -188,19 +188,19 @@
       This list is a glossery of terms we think some people may 
       not understand so they are contained here.
       <br>
-      <select id="selGlossary">
+      <select id="selDefinitions">
         <option>Asthma</option>
         <option>Dropsy</option>
         <option>Jaundice</option>
         <option>Mucus</option>
         <option>Phlegm</option>
       </select>
-      <button onclick="eh_openHerbGlossary('');">
+      <button onclick="return gu(ge('selDefinitions').value, 'definition', '');">
         Go to definition
       </button>
     </fieldset>
 
-    <fieldset class="bgAilmentPage">
+    <fieldset class="bgAilmentPage m1em">
       <legend>
         Ailments
       </legend>
@@ -208,21 +208,21 @@
       ailment either supportively or adversely.
       <br>
       <select id="selAilments">
-        <option>To Do</option>
+        <option>Erysepilas</option>
       </select>
-      <button onclick="eh_openHerbAilment('');">
+      <button onclick="return gu(ge('selAilments').value, 'ailment', '');">
         Go to ailment page
       </button>
     </fieldset>
 
-    <fieldset class="bgRecipePage">
+    <fieldset class="bgRecipePage m1em">
       <legend>
         Recipes
       </legend>
       Most herbs have related recipes.  
       You can look up those pages here.
             <br>
-      <select id="selRecipes">
+      <select id="selHerbRecipes">
         <option>Elder bark infusion</option>
         <option>Elder leaf ointment for bruises sprains and such</option>
         <option>Elderberry for colds flus hay fever and sinissitis</option>
@@ -236,11 +236,29 @@
         <option>Elderflower miosture cream</option>
         <option></option>
       </select>
-      <button onclick="eh_openHerbRecipe('');">
+      <button onclick="return gu(ge('selHerbRecipes').value, 'recipe', '');">
         Go to ailment page
       </button>
     </fieldset>
+
+
+    <fieldset class="bgResourcePage m1em">
+      <legend>
+        Resources
+      </legend>
+      This list contains pages that site references, reference videos and other online herb
+      resources, references herbalists and other experts, references tools and techniques
+      and most importantly, tells you how to submit feedback to improve this database.
+      <br>
+      <select id="selResources">
+        <option>Model</option>
+        <option></option>
+      </select>
+      <button onclick="return gu(ge('selResources').value, 'resource', '');">
+        Go to resource page
+      </button>
     </fieldset>
+
 
   </div>
 </body>

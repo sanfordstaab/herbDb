@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head>Caustic
   <meta charset="UTF-8" />
-  <title>[Model] Property</title>
+  <title>[Model]</title>
   <link rel="stylesheet" href="../styles.css">
   <script src="../utils.js"></script>
   <script src="../herbdb.js"></script>
   <script src="../tools.js"></script>
 </head>
 <body>
-  <div class="bdr ctr maxwidth800 p2em bgPropertyPage">
+  <div class="bdr ctr maxwidth800 p2em bgResourcePage">
     <h1 class="ac">[Model]</h1>
-    <h3 class="ac">Herb Property Page</h3>
+    <h3 class="ac">Resource Page</h3>
     <br>
     <a href="../index.html" target="home">
       Go To Home Page
     </a>
     <br>
-    <select id="selHerbProperties">
+    <select id="selHerbResources">
       <option>[herb]</option>
     </select>
-    <button onclick=" return gu(ge('selHerbProperties').value, 'article', root);">
-      Go to the Herb article associated with this property
+    <button 
+      onclick="return gu(ge('selHerbResources').value, 'recipe', '../');">
+      Go to the Herb article associated with this recipe
     </button>
     <br>
     <br>
-    <!-- article goes here -->
-    <b>[Model]</b>
+    <!-- resource article goes here -->
     Notes
   </div>
 </body>
