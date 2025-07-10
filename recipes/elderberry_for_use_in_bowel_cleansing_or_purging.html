@@ -17,14 +17,6 @@
       Go To Home Page
     </a>
     <br>
-    Herb Recipes:
-    <select id="selHerbRecipeArticles">
-      <option>elderberry</option>
-    </select>
-    <button onclick="return gu('selHerbRecipeArticles', 'recipe');">
-      Go to the Herb article associated with this recipe
-    </button>
-    <br>
     <br>
     <!-- recipe goes here -->
     An
@@ -33,6 +25,19 @@
     </a>
     of the inner green bark in wine or cider will cleanse the bowel mopderately.  
     Use one half to one fluid ounce at at time.
+    <br>
+    <fieldset class="bgArticlePage m1em">
+      <legend>
+        Articles related to this recipe
+      </legend>
+      Herb Articles:
+      <select id="selHerbRecipeArticles">
+        <option>Model</option>
+      </select>
+      <button onclick="return gu('selHerbRecipeArticles', 'article');">
+        Go to the Herb article associated with this recipe
+      </button>
+    </fieldset>
   </div>
 </body>
 </html>

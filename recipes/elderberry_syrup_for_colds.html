@@ -17,15 +17,7 @@
       Go To Home Page
     </a>
     <br>
-    <select id="selHerbRecipes">
-      <option>Elderberry</option>
-    </select>
-    <button onclick="return gu('selHerbRecipes', 'recipe');">
-      Go to the Herb article associated with this recipe
-    </button>
     <br>
-    <br>
-    <!-- recipe goes here -->
     Gather berry clusters after the first <u>hard</u> frost.
     Remove stems and place berries in a large pan.
     Heat slowly, mashing the berries.
@@ -36,6 +28,19 @@
     Simmer over medium-high heat until thick and of a syrup-like consistency.
     Pour into sterilized bottles and seal in a boiling water bath for twenty minutes.
     Use as a cold preventative.
+    <br>
+    <fieldset class="bgArticlePage m1em">
+      <legend>
+        Articles related to this recipe
+      </legend>
+      Herb Articles:
+      <select id="selHerbRecipeArticles">
+        <option>Model</option>
+      </select>
+      <button onclick="return gu('selHerbRecipeArticles', 'article');">
+        Go to the Herb article associated with this recipe
+      </button>
+    </fieldset>    
   </div>
 </body>
 </html>

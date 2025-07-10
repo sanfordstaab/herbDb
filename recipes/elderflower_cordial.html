@@ -17,13 +17,6 @@
       Go To Home Page
     </a>
     <br>
-    <select id="selHerbRecipes">
-      <option>Elderberry</option>
-    </select>
-    <button onclick="return gu('selHerbRecipes', 'recipe');">
-      Go to the Herb article associated with this recipe
-    </button>
-    <br>
     <br>
     <!-- recipe goes here -->
     Ingredients:
@@ -58,6 +51,19 @@
     To dring, dilute to taste with cool sparkling water.
     <br>
     This can also be made with hot water to encourage sweating for colds and fevers.
+    <br>
+    <fieldset class="bgArticlePage m1em">
+      <legend>
+        Articles related to this recipe
+      </legend>
+      Herb Articles:
+      <select id="selHerbRecipeArticles">
+        <option>Elcerberry</option>
+      </select>
+      <button onclick="return gu('selHerbRecipeArticles', 'article');">
+        Go to the Herb article associated with this recipe
+      </button>
+    </fieldset>    
   </div>
 </body>
 </html>

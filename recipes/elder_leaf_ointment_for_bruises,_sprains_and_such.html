@@ -17,16 +17,7 @@
       Go To Home Page
     </a>
     <br>
-    Herb Recipes:
-    <select id="selHerbRecipeArticles">
-      <option>Elderberry</option>
-    </select>
-    <button onclick="return gu('selHerbRecipeArticles', 'recipe');">
-      Go to the Herb article associated with this recipe
-    </button>
     <br>
-    <br>
-    <!-- recipe goes here -->
     Ingredients:
     <ul class="m1em bdr">
       <li>1 cup extra virgin olive oil</li>
@@ -42,6 +33,19 @@
     Melt one oz. beeswax in the oil and pour into ointment hjars.
     <br>
     Cool, label, and put on lids.
+    <br>
+    <fieldset class="bgArticlePage m1em">
+      <legend>
+        Articles related to this recipe
+      </legend>
+      Herb Articles:
+      <select id="selHerbRecipeArticles">
+        <option>Elderberry</option>
+      </select>
+      <button onclick="return gu('selHerbRecipeArticles', 'article');">
+        Go to the Herb article associated with this recipe
+      </button>
+    </fieldset>
   </div>
 </body>
 </html>

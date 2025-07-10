@@ -17,13 +17,6 @@
       Go To Home Page
     </a>
     <br>
-    <select id="selHerbRecipes">
-      <option>Elderberry</option>
-    </select>
-    <button onclick="return gu('selHerbRecipes', 'recipe');">
-      Go to the Herb article associated with this recipe
-    </button>
-    <br>
     <br>
     <!-- recipe goes here -->
     Ingredients:
@@ -44,6 +37,19 @@
     Bottle the liquid, label and store in a cool dark place.
     <br>
     Use one tsp. as needed for sore throats.
+    <br>
+    <fieldset class="bgArticlePage m1em">
+      <legend>
+        Articles related to this recipe
+      </legend>
+      Herb Articles:
+      <select id="selHerbRecipeArticles">
+        <option>Elderberry</option>
+      </select>
+      <button onclick="return gu('selHerbRecipeArticles', 'article');">
+        Go to the Herb article associated with this recipe
+      </button>
+    </fieldset>    
   </div>
 </body>
 </html>

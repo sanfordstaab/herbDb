@@ -17,13 +17,6 @@
       Go To Home Page
     </a>
     <br>
-    <select id="selHerbRecipes">
-      <option>Elderberry</option>
-    </select>
-    <button onclick="return gu('selHerbRecipes', 'recipe');">
-      Go to the Herb article associated with this recipe
-    </button>
-    <br>
     <br>
     <!-- recipe goes here -->
     Ingredients:
@@ -54,8 +47,19 @@
     Keep whisking and slowly add the elderflower oil in a steady stream.
     Spoon the resulting mixture/cream into small jars with tihgt fitting lists and stor in the refrigerator.
     This cream is best when use within two months.
-
-
+    <br>
+    <fieldset class="bgArticlePage m1em">
+      <legend>
+        Articles related to this recipe
+      </legend>
+      Herb Articles:
+      <select id="selHerbRecipeArticles">
+        <option>Model</option>
+      </select>
+      <button onclick="return gu('selHerbRecipeArticles', 'article');">
+        Go to the Herb article associated with this recipe
+      </button>
+    </fieldset>
   </div>
 </body>
 </html>
