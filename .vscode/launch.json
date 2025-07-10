@@ -10,6 +10,15 @@
       "name": "Launch index.htmlt",
       "file": "${workspaceFolder}/index.html",
       "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "Launch build.mjs",
+      "program": "${workspaceFolder}/build/build.mjs",
+      "request": "launch",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node"
     }
   ]
 }
