@@ -17,20 +17,25 @@
       Go To Home Page
     </a>
     <br>
-    <select id="selHerbRecipes">
-      <option>Model</option>
-    </select>
-    <button onclick="return gu('selHerbRecipes', 'article');">
-      Go to the Herb article associated with this recipe
-    </button>
     <br>
-    <br>
-    <!-- recipe goes here -->
     Ingredients:
     <ul class="m1em bdr">
       <li>item 1</li>
     </ul>
-    Notes
+    [Recipe]
+    <br>
+    <fieldset class="bgArticlePage m1em">
+      <legend>
+        Articles related to this recipe
+      </legend>
+      Herb Articles:
+      <select id="selHerbRecipeArticles">
+        <option>Model</option>
+      </select>
+      <button onclick="return gu('selHerbRecipeArticles', 'article');">
+        Go to the Herb article associated with this recipe
+      </button>
+    </fieldset>
   </div>
 </body>
 </html>
