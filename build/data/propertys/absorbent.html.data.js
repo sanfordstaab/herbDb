@@ -10,9 +10,8 @@
   // tags that relate to this property.
   // If no articles yet exist you can leave this blank or 
   // use the Model article for testing.
-  propertyHerbArticleOptions: `
-    <option>Model</option>
-    `,
+  propertyHerbArticleOptions: 
+    `<option>Model</option>`,
 
   // The notes are the bulk of this pages information
   // and can have html tags.

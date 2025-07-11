@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Geneve's Herb Database</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="./utils.js"></script>
+    <script src="./herbdb.js"></script>
+    <script src="./tools.js"></script>
+  </head>
+
+<body onload="onHomePageLoad();">
+  <div class="bdr ctr maxwidth800 p2em bgHomePage">
+    <h1 class="ac">Geneve's Herb Database</h1>
+    <h3 class="ac">Home Page</h3>
+    <fieldset class="m1em">
+      <legend>
+        How this database works
+      </legend>
+      This database consists of a web of pages that can be referenced by various
+      categorized lists and which cross-link to each other.
+      This home page is where you can browse any of these pages via various
+      lists which you can then follow to learn whatever you like.
+    </fieldset>
+
+    <fieldset class="bgArticlePage m1em">
+      <legend>
+        Articles
+      </legend>
+      Articles are pages mostly about a specific herb but can also contain
+      pages on any herb-related subject.
+      <br>
+      <select id="selHerbArticles"
+        title="select an herb to see it's article page.">
+        <option>Elderberry</option>
+        <option>Plantain</option>
+      </select>
+      &nbsp;
+      <button onclick="return gu('selHerbArticles', 'article', '');;">
+        Go to herb article
+      </button>
+    </fieldset>
+
+    <fieldset class="bgPropertyPage m1em">
+      <legend>
+        Properties
+      </legend>
+      Properties are things which herbs posess.
+      An herb may have many properties and many herbs may affect the same property.
+      <br>
+      This is a large list.
+      Large lists may have a filter field that helps you find what your are looking for.
+      When text is entered into a filter field, the list is limited to only names that
+      contain the filter text.  Clearing the filter restores the full list to select from.
+      <br>
+      <select id="selHerbProps"
+      title="select a property to see it's article page.">
+      <option>Absorbent</option>
+      <option>Alterative</option>
+      <option>Analgesic</option>
+      <option>Anaphrodisiac</option>
+      <option>Antacid</option>
+      <option>Anthelmintic</option>
+      <option>Antiabortive</option>
+      <option>Antiarthritic</option>
+      <option>Antiasthmatic</option>
+      <option>Antibilious</option>
+      <option>Anticatarrhal</option>
+      <option>Antiemetic</option>
+      <option>Antihydropic</option>
+      <option>Antilithic</option>
+      <option>Antiperiodic</option>
+      <option>Antipyretic</option>
+      <option>Antirheumatic</option>
+      <option>Antiscorbutic</option>
+      <option>Antiscrofulou</option>
+      <option>Antiseptic</option>
+      <option>Antispasmodic</option>
+      <option>Antisyphlitic</option>
+      <option>Antivenomou</option>
+      <option>Antizymot</option>
+      <option>Aromatic</option>
+      <option>Astringent</option>
+      <option>Aphrodisiac</option>
+      <option>Balsamic</option>
+      <option>Bitter</option>
+      <option>Blister</option>
+      <option>Calefacient</option>
+      <option>Cardiac Depressant</option>
+      <option>Cardiac Stimulant</option>
+      <option>Carminative</option>
+      <option>Cathartic</option>
+      <option>Caustic</option>
+      <option>Cell Proliferant</option>
+      <option>Cephalic</option>
+      <option>Cholagogue</option>
+      <option>Condiment</option>
+      <option>Coloring Agent</option>
+      <option>Cordial</option>
+      <option>Corrective</option>
+      <option>Cosmetic</option>
+      <option>Counter Irritant</option>
+      <option>Demulcent</option>
+      <option>Dental Anodyne</option>
+      <option>Deobstruent</option>
+      <option>Deodorant</option>
+      <option>Depresso Motor</option>
+      <option>Depurant</option>
+      <option>Dessicant</option>
+      <option>Detergent</option>
+      <option>Diaphoretic</option>
+      <option>Digestant</option>
+      <option>Diluent</option>
+      <option>Discutient</option>
+      <option>Disinfectant</option>
+      <option>Diuretic</option>
+      <option>Drastic</option>
+      <option>Emetic</option>
+      <option>Emmenogogue</option>
+      <option>Emollient</option>
+      <option>Errhine</option>
+      <option>Exanthematou</option>
+      <option>Excito Motor</option>
+      <option>Expectorant</option>
+      <option>Febrifuge</option>
+      <option>Galactagogue</option>
+      <option>Galactophyga</option>
+      <option>Hemetic</option>
+      <option>Hemostatic</option>
+      <option>Hemostatic</option>
+      <option>Hepatic</option>
+      <option>Herpatic</option>
+      <option>Hypnotic</option>
+      <option>Insecticide</option>
+      <option>Irritant</option>
+      <option>Laxative</option>
+      <option>Lithotriptic</option>
+      <option>Local Anaesthetic</option>
+      <option>Maturating</option>
+      <option>Mucilage</option>
+      <option>Mydriatic</option>
+      <option>Myotic</option>
+      <option>Narcotic</option>
+      <option>Nauseant</option>
+      <option>Nephritic</option>
+      <option>Nervine</option>
+      <option>Nutriative</option>
+      <option>Ophthalmic</option>
+      <option>Parasiticide</option>
+      <option>Parturient</option>
+      <option>Pectoral</option>
+      <option>Peristaltic</option>
+      <option>Protective</option>
+      <option>Pungent</option>
+      <option>Refrigerant</option>
+      <option>Resolvent</option>
+      <option>Rubefacient</option>
+      <option>Sedative</option>
+      <option>Sialagogue</option>
+      <option>Soporific</option>
+      <option>Sternutatorie</option>
+      <option>Stimulant</option>
+      <option>Stomachic</option>
+      <option>Styptic</option>
+      <option>Sudorific</option>
+      <option>Taeniafuges/cide</option>
+      <option>Tonic</option>
+      <option>Vulnerarie</option>
+      </select>
+      &nbsp;
+      <button onclick="return  gu('selHerbProps', 'property', '');">
+        Go to property page
+      </button>
+      &nbsp;
+      <input 
+        type="text" 
+        placeholder="List Filter" 
+        onkeyup="onPropertyFilterChanged();" 
+        onchange="onPropertyFilterChanged();"/>
+    </fieldset>
+
+    <fieldset class="bgDefinitionPage m1em">
+      <legend>
+        Definitions
+      </legend>
+      There are many technical terms referenced in our articles 
+      that are not propertys of herbs but nonetheless need to be defined.
+      This list is a glossery of terms we think some people may 
+      not know so they are contained here.
+      <br>
+      <select id="selDefinitions">
+        <option>Asthma</option>
+        <option>Catarrh</option>
+        <option>Ciliary</option>
+        <option>Dropsy</option>
+        <option>Jaundice</option>
+        <option>Mucus</option>
+        <option>Moxious</option>
+        <option>Phlegm</option>
+        <option>Ripening</option>
+      </select>
+      <button onclick="return gu('selDefinitions', 'definition', '');">
+        Go to definition
+      </button>
+    </fieldset>
+
+    <fieldset class="bgAilmentPage m1em">
+      <legend>
+        Ailments
+      </legend>
+      Ailment pages help you find out what herbs address a particular 
+      ailment either supportively or adversely.
+      <br>
+      <select id="selAilments">
+        <option>Erysepilas</option>
+      </select>
+      <button onclick="return gu('selAilments', 'ailment', '');">
+        Go to ailment page
+      </button>
+    </fieldset>
+
+    <fieldset class="bgRecipePage m1em">
+      <legend>
+        Recipes
+      </legend>
+      Most herbs have related recipes.  
+      You can look up those pages here.
+      <br>
+      <select id="selHerbRecipes">
+        <option>Elder bark infusion</option>
+        <option>Elder leaf ointment for bruises sprains and such</option>
+        <option>Elderberry for colds flus hay fever and sinussitis</option>
+        <option>Elderberry for rhumatic complaints</option>
+        <option>Elderberry for use in bowel cleansing or purging</option>
+        <option>Elderberry glycerite for sore throats and coughs</option>
+        <option>Elderberry Oatmeal soap for dry scaly skin</option>
+        <option>Elderberry syrup for colds</option>
+        <option>Elderflower cordial</option>
+        <option>elderflower glycerite</option>
+        <option>Elderflower moisture cream</option>
+      </select>
+      <button onclick="return gu('selHerbRecipes', 'recipe', '');">
+        Go to ailment page
+      </button>
+    </fieldset>
+
+
+    <fieldset class="bgResourcePage m1em">
+      <legend>
+        Resources
+      </legend>
+      This list contains pages that site references, reference videos and other online herb
+      resources, references herbalists and other experts, references tools and techniques
+      and most importantly, tells you how to submit feedback to improve this database.
+      <br>
+      <select id="selResources">
+        <option>Model</option>
+        <option>Model</option>
+      </select>
+      <button onclick="return gu('selResources', 'resource', '');">
+        Go to resource page
+      </button>
+    </fieldset>
+
+
+  </div>
+</body>
+</html>

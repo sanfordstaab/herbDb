@@ -14,10 +14,19 @@ const aAllFilesInOrder = eval(sMainData).allFilesInOrder;
 // for each file path, relative to the target and 
 // data directories, listed in main.data.js...
 for (const filePath of aAllFilesInOrder) {
-  const dataFilePath = `${dataBasePath}/${filePath.replace(/\.html$/, '.data.js')}`;
+  if (filePath.trim().indexOf('//') == 0) {
+    // skip comment lines
+    continue;
+  }
+  const dataFilePath = `${dataBasePath}/${filePath + '.data.js'}`;
   if (!fs.existsSync(dataFilePath)) {
-    console.warn(`The file ${dataFilePath} does not exist. ${filePath} will not be built.`)
-    console.error('Build failed');
+    console.warn(`The file: "${
+        path.basename(dataFilePath)
+      }" does not exist.
+      "${
+        path.basename(filePath)
+      }" will not be built.`)
+    continue;
   }
   let data = fs.readFileSync(dataFilePath).toString();
   try {
@@ -43,5 +52,5 @@ for (const filePath of aAllFilesInOrder) {
   
   const targetFilePath = `${targetBasePath}/${filePath}`;
   fs.writeFileSync(targetFilePath, outputData);
-  break;
+  console.log(`Built ${path.basename(targetFilePath)}`)
 }

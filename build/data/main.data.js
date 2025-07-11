@@ -2,7 +2,13 @@
   allFilesInOrder: [ 
     // these are all the files to build in order- meaning index.html does last.
     // by convention foo.template and foo.data follow the file name.
-    'propertys/absorbent.html',
+    'styles.css',
+    'herbDb.js',
+    'tools.js',
+    'utils.js',
+    'index.html',
+    'large-img.html',
+    // this starts the files that users can alter via the .data.js files.
     'ailments/model.html',
     'articles/elderberry.html',
     'articles/model.html',
@@ -17,7 +23,7 @@
     'definitions/phlegm.html',
     'definitions/ripening.html',
     'definitions/sambucol.html',
-    'large-img.html',
+    'propertys/absorbent.html',
     'propertys/alterative.html',
     'propertys/analgesic.html',
     'propertys/anaphrodisiac.html',

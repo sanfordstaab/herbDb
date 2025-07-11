@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Large Photo</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="./utils.js"></script>
+  <script src="./herbdb.js"></script>
+  <script src="./tools.js"></script>
+</head>
+<body onload="setElementAttribute('imgLarge', 'src', 'src');
+  setElementAttribute('h5String', 'innerText', 'plantName')">
+  <div class="bdr ctr maxwidth800 bgLargePhotoPage">
+    <h3 class="ac">Large Photo Page</h3>
+    <h5 class="ac" id="h5String">plantName</h5>
+    <a href="index.html" target="home">
+      Go To Home Page
+    </a>
+    <br>
+    <img id="imgLarge" src="" class="largeImg"/>
+  </div>
+</body>
+</html>
