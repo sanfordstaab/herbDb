@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>%ailment% Ailment</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../utils.js"></script>
+  <script src="../herbdb.js"></script>
+  <script src="../tools.js"></script>
+</head>
+<body>
+  <div class="bdr ctr maxwidth800 p2em bgAilmentPage">
+    <h1 class="ac">%ailment%</h1>
+    <h3 class="ac">Ailment Page</h3>
+    <br>
+    <a href="../index.html" target="home">
+      Go To Home Page
+    </a>
+    <br>
+    <br>
+    <!-- article goes here -->
+    <b>%ailmentText%</b> 
+    Notes
+    <br>
+    <select id="selRelatedHerbs">
+      %relatedHerbArticleOptions%
+    </select>
+    <button onclick="gu('selRelatedHerbs', 'article');">
+      Go to the related herb article page
+    </button>
+  </div>
+</body>
+</html>

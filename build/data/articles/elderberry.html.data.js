@@ -1,0 +1,236 @@
+({
+  // The name of the template file for this type of data
+  // In this case we are just copying the template to the
+  // target directory unchanged.
+  template: 'article.template.html',
+  articleSubject: 'Elderberry',
+  articleText: `
+<b>
+  Description: 
+</b>
+  White or Yellow flowers that deveolp into fruit; plant grows between 10-30 feet high. 
+  <b>
+    Blooms in:
+  </b>
+  April-June; fruits mid to late summer.
+<br>
+<b>
+  Proper Name: 
+</b> 
+<i>Sambucus nigra L. or Sambucus canadensis L.</i>
+<br>
+<b>
+  Other Names: 
+</b>
+<i>American Elder, Pipe Tree, Black Elder, Bore Tree, Common Elder</i>
+<br>
+<b>
+  Meridians affected: 
+</b>
+lungs, liver, stomach, colon</b>
+<br>
+<b>
+  Parts used: 
+</b>
+flowers, leaves, bark, berries
+<br>
+<div class="bdr p1em bgHarvest">
+  <b>
+    When to Harvest:
+  </b>
+  <ul class="m0">
+    <li>
+      Flowers: <i>June</i>
+    </li>
+    <li>
+      Leaves: <i>July 8AM-10AM</i>
+    </li>
+    <li>
+      Bark: <i>September 11AM-1PM</i>
+    </li>
+    <li>
+      Berries: <i>After the 1st frost 2PM-4PM</i>
+    </li>
+  </ul>
+  <br>
+  <div>
+    Pick bunches of elderberries when they are ripe and black but still firm and shiny.
+    The easiest way to strip them from their stems is to use a fork.
+    To harvest the flowers for drying, pick whole, sweet-smelling heads and spread 
+    them on brown paper; when dry, use a fork to stirp the blossoms off of the stems.
+  </div>
+</div>
+<br>
+Photos::
+<br>
+<a href="../large-img.html?src=img/Elderberry/1.jpg&plantName=Elderberry">
+  <img class="smallImg" src="../img/Elderberry/1.jpg"/>
+</a>
+&nbsp;
+<a href="../large-img.html?src=img/Elderberry/2.jpg&plantName=Elderberry">
+  <img class="smallImg" src="../img/Elderberry/2.jpg"/>
+</a>
+<br>
+<br>
+Elderberry is a member of the <i>honeysuckle</i> family.
+<br>
+<div class="warning ac">The roots are not to be used as they can be toxic!</div>
+The <b>bark</b> from young trees must be aged one year or more and makes a strong 
+<a href="" onclick="return gu('laxative', 'property');">
+  laxative
+</a>
+when gathered in the autumn.
+<br>
+In small amounts it can help with renal and cardiac 
+<a href="" onclick="return gu('dropsy', 'definition');">
+  dropsy
+</a>.
+It can also be an 
+<a href="" onclick="return gu('emetic', 'property');">
+  emetic
+</a>
+for 
+<a href="" onclick="return gu('jaundice', 'definition');">
+  jaundice
+</a>
+conditions or 
+<a href="" onclick="return gu('asthma', 'definition');">
+  asthmatic
+</a>
+conditions with a lot of 
+<a href="" onclick="return gu('mucus', 'definition');">
+  mucus
+</a>
+and/or 
+<a href="" onclick="return gu('phlegm', 'definition');">
+  phlegm
+</a>.
+<br>
+In the case of 
+<a href="" onclick="return gu('dropsy', definition);">
+  dropsy
+</a>.
+, one wine glassful of 
+<a href="" onclick="return gu('elder_bark_infusion', 'recipe');">
+  aged elder bark infusion 
+</a>
+every three hours until the bowels
+move or until urine is excreted is suggested.
+It is also used for epilepsy and to cleanse the stomach as an
+<a href="" onclick="return gu('emetic', 'property');">
+  emetic
+</a>.
+<br>
+Tea made from the 
+<b>
+  flowers
+</b>
+is excellent for eye inflamation or twitching.
+It is a wonderful 
+<a href="" onclick="return gu('tonic', 'definition');">
+  tonic 
+</a>
+and
+<a href="" onclick="return gu('blood purifier', 'definition');">
+  blood purifier
+</a>
+.
+<br>
+It builds the system and is great for the kidneys and the liver.
+<br>
+It is also a great remedy for 
+<a href="" onclick="return gu('erysepilas', 'ailment');">
+  erysepilas
+</a>.
+<br>
+<div class="warning ac">
+  Do not use fresh herb as poisoning may result!  This is mostly for the Red Elderberry variety.
+</div>
+Elderberry has been used as a circulatory stimulant and an 
+<a href="" onclick="return gu('hypertensive', 'definition');">
+  anti-hypertensive
+</a>.
+In fact, it is very good for the heart in general.  It contains 
+<a href="" onclick="return gu('capillarigenic', 'property');">
+  capillarigenics
+</a>,
+<a href="" onclick="return gu('kaempferol', 'property');">
+  kaempferol
+</a>
+and many
+<a href="" onclick="return gu('carcinogenic', 'property');">
+   anti-carcinogenic
+</a>
+components.
+<br>
+There have been a series of studies ocnducted on Elderberry Extract 
+with regards to the flu virus (Influenzas A & B). 
+In all cases, those subjects taking 
+<a href="" onclick="return gu('sumbucol', 'definition');">
+  sumbucol
+</a>
+experienced almost full recovery in 24-48 hours.
+<br>
+For hundreds of years, the gypsy people have used elderberries to treat the flu, colds, and neuralgia.  
+The hot tea is soothing to the respiratory system and promotes sweating.
+It has been used to some success for skin inflammation (eczema, etc.).
+<br>
+Elderberries are a good souce of Vitamains A, B C, and B17 (laetrile), plus calcium, potassium, and iron.
+The raw berry is said to be toxic so 
+<span class="warning">
+  only use cooked berries or those in tincture form. 
+</span>
+<br>
+Dried elderflowers have been used for making washes to treat blisters, hemorrhoids, arthritis, sores, and rheumatism.
+<br>
+The decocted inner bark was used topically by the Native Americans for dermatitis, skin ulcers, and eczema.
+<br>
+FYI: Elder is known as the "Tree of music" to some Native American tribes as they would make flutes from its stems.
+Also called the "Tree of medicine".  
+  `,
+
+  relatedHerbRecipeOptions: 
+    [ 
+      'optionTextList', 
+      [ 
+        'Elderberry for Rhumatic complaints',
+        'Elderberry for use in bowel cleansing or purging',
+        // Note that commas are allowed in the text form
+        // but will be removed when converting to a filename
+        'Elderberry for colds, flus, hay fever, and sinussitis',
+        // thus, the above text converts to a reference to
+        // "elderberry_for_colds_flus_hay_fever_and_sinussitis.html"
+        'Elderbery syrup for colds',
+        'Elderberry oatmeal soap for dry, scaly skin',
+        'Elder leaf ointment for bruises, sprains and such',
+        'Elderberry glycerite for sore throats and coughs',
+        'Elderflower glycerite',
+        'Elderflower cordial',
+        'Elderflower moisture cream',
+      ]
+    ],
+
+    relatedHerbPropertyOptions:
+    [
+      'optionTextList',
+      [
+        // note that you can place a ()s into the option
+        // that will be ignored.
+        'emetic (bark)',
+        // thus the above string will convert to the following filename
+        // emetic.html
+        'cathartic (bark)',
+        'diaphoretic (flower)',
+        'diuretic (flower)',
+        'exanthematout (flower)',
+        'alterative (flower)',
+        'emollient (flower)',
+        'discutient (flower)',
+        'rubrifacient (flower)',
+      ]
+    ],
+
+    relateHerbAilmentOptions: [ 'optionTextList', [ 'Model'] ],
+
+    relateHerbResourceOptions: [ 'optionTextList', [ 'Model'] ],
+});

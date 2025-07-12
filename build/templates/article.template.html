@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>%articleSubject% Article</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../utils.js"></script>
+  <script src="../herbdb.js"></script>
+  <script src="../tools.js"></script>
+</head>
+<body>
+  <div class="bdr ctr maxwidth800 p2em bgArticlePage">
+    <h1 class="ac"Elderberry</h1>
+    <h3 class="ac">Herb Article Page</h3>
+    <br>
+    <a href="../index.html" target="home">
+      Go To Home Page
+    </a>
+    <br>
+    <br>
+    %articleText%
+<br>
+<br>
+<fieldset class="bgLists">
+  <legend>
+    Lists for this herb
+  </legend>
+  <div class="p1em bgRecipePage">
+    Recipies:
+    <select id="selHerbRecipies">
+      %relatedHerbRecipeOptionss%
+    </select> 
+    <button onclick="gu('selHerbRecipies', 'recipe');">
+      Go to the recipe that uses this herb
+    </button>
+  </div>
+  <br>
+  <div class="p1em bgPropertyPage">
+    Properties:
+    <select id="selHerbProperties">
+      %relatedHerbPropertyOptions%
+    </select> 
+    <button onclick="gu('selHerbProperties', 'property');">
+      Go to the property associated with this herb
+    </button>   
+  </div>
+  <br>
+  <div class="p1em bgAilmentPage">
+    Ailments:
+    <select id="selHerbAilments">
+      %relatedHerbAilmantOptions%
+    </select> 
+    <button onclick="gu('selHerbAilments', 'ailment');">
+      Go to the ailment associated with this herb
+    </button>
+  </div>
+  <br>
+  <div class="p1em bgResourcePage">
+    Resources:
+    <select id="selHerbResources">
+      %relatedHerbResourceOptions%
+    </select> 
+    <button onclick="gu('selHerbResources', 'resource');">
+      Go to the resource associated with this herb
+    </button> 
+  </div>
+</fieldset>
+  </div>
+</body>
+</html>
