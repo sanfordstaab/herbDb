@@ -209,7 +209,9 @@ for (const filePath of aAllFilesInOrder) {
   } else {
     const targetFilePath = `${targetBasePath}/${filePath}`;
     fs.writeFileSync(targetFilePath, outputData);
-    console.log(`Built ${path.basename(targetFilePath)}`)
+    if (fBuildAllFilesOnError) {
+      console.log(`Built ${path.basename(targetFilePath)}`)
+    }
   }
 
 } // for each data file
