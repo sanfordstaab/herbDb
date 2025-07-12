@@ -67,12 +67,9 @@ for (const filePath of aAllFilesInOrder) {
     if (fBuildAllFilesOnError) continue; else break;
   }
   // read the template file
-  let sTemplateData = fs.readFileSync(templateFilePath).toString();
+  let sTemplate = fs.readFileSync(templateFilePath).toString();
   
-  // substitute oData values into sTemplateData
-  let outputData = sTemplateData;
-  let fError = false;
-
+  // substitute oData values or do operations on sTemplate.
   // for each key of the oData object...
   for (const key in oData) {
 
@@ -82,135 +79,46 @@ for (const filePath of aAllFilesInOrder) {
     }
 
     if (typeof(oData[key]) == 'string') {
-      // straight substitution
-      outputData = outputData.replace(new RegExp(`%${key}%`, 'gm'), oData[key]);
-    } 
-
-    else if (Array.isArray(oData[key])) {
-      // The value can be an array which allows attaching one or more 
-      // operations to instruct the buile process how to handle
-      // the value.
+      // straight and simple substitution
+      sTemplate = sTemplate.replace(new RegExp(`%${key}%`, 'gm'), oData[key]);
+      continue; // next key please
+    
+    } else if (Array.isArray(oData[key])) {
       // key: [ operation, value(s) ]
       const operation = oData[key][0];
-      const opValue = oData[key][1];
 
       switch (operation) {
 
         case 'optionTextList':
-          // substitute value(s) after wrapping them in option tags.
-          // sort them alphabetically
-          
-          fError = keyValuechecks(oData, key, dataFilePath);
-          if (!fError) {
-            fError = opValueArrayChecks(oData, key, dataFilePath);
-          }
-          if (fError) {
-            break;
-          }
-
-          // go through the option list
-          let sOptions = '';
-          for (const sText of opValue) {
-            if (typeof(sText) != 'string') {
-              console.warn(`!!! Syntax error in ${
-                  getContextBasePath(dataFilePath)
-                } for key ${
-                  key
-                }.
-                    ${
-                  oData[key]
-                } 
-                All values in the second value part array should be strings.
-                [${
-                  JSON.stringify(sText)
-                }] is not.`);
-                fError = true;
-            }
-
-            // wrap the option text in <option> tags
-            sOptions += `<option>${sText}</option>\n`
-          }
-
-          // insert the options list into the template
-          outputData = outputData.replace(new RegExp(`%${key}%`, 'gm'), sOptions);
+          sTemplate = doOptionTextList(oData, key, dataFilePath, sTemplate);
           break;
 
         case 'allOptionsOfType':
-          fError = keyValuechecks(oData, key, dataFilePath);
-          if (fError) {
-            continue;
-          }
-
-          // opValue should be a string
-          if (typeof(opValue) != 'string') {
-            console.warn(`!!! type value of "${
-                opValue
-              }" was not recognized for key ${key} of ${getContextBasePath(dataFilePath)}
-              This file will be skipped.`);
-            fError = true;
-            break;
-          }
-
-          // check the value to ensure it is a proper type
-          const typeBasePath = `${dataBasePath}/${opValue + 's'}`;
-          if (!fs.existsSync(typeBasePath)) {
-            console.warn(`!!! Unrecognized data type name "${opValue}" in the value for key ${key}.
-              The file ${getContextBasePath(dataFilePath)} will be skipped.`)
-            fError = true;
-            if (fBuildAllFilesOnError) continue; else break;
-          }
-
-          const aFileNames = [];
-          // find all the fileNames within the typeBasePath
-          for (const fName of fs.readdirSync(typeBasePath)) {
-            // will also include directory names so skip those.
-            if (fs.statSync(path.resolve(typeBasePath, fName)).isDirectory()) {
-              continue;
-            }
-            // skip non-data.js files
-            if (fName.lastIndexOf('.data.js') != fName.length - 8) {
-              continue;
-            }
-            aFileNames.push(fileNameToOption(path.basename(fName)));
-          };
-          outputData = outputData.replace(new RegExp(`%${key}%`, 'gm'), aFileNames.sort().join('\n'));
+          sTemplate = doAllOptionsOfType(oData, key, dataFilePath, sTemplate);
           break;
 
         default:
           console.warn(`!!! Syntax error in ${
               getContextBasePath(dataFilePath)
             }.
-            The operation value part [${operation}] is unrecogniced.`);
-            fError = true;
+            Unrecognized operation '${operation}'.`);
           break;
 
       } // switch oData[key][0]
 
     } // opValue is an Array
-    else {
-      console.warn(`!!! Syntax error in ${
-          getContextBasePath(dataFilePath)
-        } for key ${
-          key
-        }. 
-        The second part of the second value is of type ${
-          typeof(opValue)
-        } but an array was expected.`);
-    } // type check if for second part of second value
-
-    if (fError) {
-     break; // go on to next key
-    }
   } // for each key
 
-  if (fError) {
-    console.warn(`!!! Failed to build ${path.basename(targetFilePath)}`);
-    break;  // stop build
+  if (!sTemplate) {
+    if (fBuildAllFilesOnError) continue; else break;
   } else {
+    // write the built file
     const targetFilePath = `${targetBasePath}/${filePath}`;
-    fs.writeFileSync(targetFilePath, outputData);
+    fs.writeFileSync(targetFilePath, sTemplate);
     if (fBuildAllFilesOnError) {
-      console.log(`Built ${path.basename(targetFilePath)}`)
+      console.log(`${
+          getContextBasePath(targetFilePath, 'public')
+        } built ok.`)
     }
   }
 
@@ -277,17 +185,16 @@ function opValueArrayChecks(oData, key, dataFilePath) {
  * @param {object} oData 
  * @param {string} key 
  * @param {string} dataFilePath 
- * @returns 
+ * @returns {boolean} fError
  */
 function keyValuechecks(oData, key, dataFilePath) {
-  let fError = false;
   const opValue = oData[key];
   if (!opValue) {
     console.warn(`!!! No value found for key ${key} in ${getContextBasePath(dataFilePath)}!
       File will be skipped.`)
-    fError = true;
+    return true;
   }
-  return fError;
+  return false;
 }
 
 function fileNameToOption(fName) {
@@ -298,4 +205,148 @@ function fileNameToOption(fName) {
 
 function getContextBasePath(fullPath, ancestorDir='data') {
   return fullPath.substring(fullPath.indexOf(ancestorDir));
+}
+
+/**
+  Given a template text list this:
+
+    <select>
+      %myOptions%
+    </select>
+
+  and a data line like this:
+
+    myOptions: [ 'optionTextList', [ 'foo', 'bar', 'other' ] ]
+
+  will produce an output like this:
+
+    <select>
+      <option>bar</option>
+      <option>foo</option>
+      <option>other</option>
+    </select>
+
+  Note that the items will be sorted alphabetically!
+ 
+  @Param {object} oData: JSON object from the data file.
+  @Param {string} key: the key into oData of the currently being processed
+    oData[key] would be the value for this key.
+  @Param dataFilePath: the full path of the current data file (for errors)
+  @Param {string} sTemplate: The current state of the template being processed.
+  @return {string} sTemplate modified by this function. 
+  '' means error.
+ */
+function doOptionTextList(oData, key, dataFilePath, sTemplate) {
+  // substitute value(s) after wrapping them in option tags.
+  // sort them alphabetically
+  
+  if (keyValuechecks(oData, key, dataFilePath) ||
+      opValueArrayChecks(oData, key, dataFilePath)) {
+    return '';
+  }
+
+  const opValue = oData[key][1];
+
+  // go through the option list and turn the text into an HTML option.
+  let sOptions = '';
+  for (const sText of opValue) {
+
+    // expect opValue to be an array of stirngs.
+    if (typeof(sText) != 'string') {
+      console.warn(`!!! Syntax error in ${
+          getContextBasePath(dataFilePath)
+        } for key ${
+          key
+        }.
+            ${
+          oData[key]
+        } 
+        All values in the second value part array should be strings.
+        [${
+          JSON.stringify(sText)
+        }] is not.`);
+        fError = true;
+    }
+
+    // wrap the option text in <option> tags
+    sOptions += `<option>${sText}</option>\n`
+  }
+
+  // insert the options list into the template
+  return sTemplate.replace(new RegExp(`%${key}%`, 'gm'), sOptions);
+}
+
+/**
+  Given a template text list this:
+
+    <select>
+      %allOptions%
+    </select>
+
+  and a data line like this:
+
+    allOptions: [ 'allOptionsOfType', 'property' ]
+
+  will produce an output like this:
+
+    <select>
+      <option>bar</option>
+      <option>foo</option>
+      <option>other</option>
+    </select>
+
+  where the options come from the existing 
+  data/propertys/foo.html.data.js files.
+  Note that the items will be sorted alphabetically!
+ 
+  @Param {object} oData: JSON object from the data file.
+  @Param {string} key: the key into oData of the currently being processed
+    oData[key] would be the value for this key.
+  @Param dataFilePath: the full path of the current data file (for errors)
+  @Param {string} sTemplate: The current state of the template being processed.
+  @return {string} sTemplate modified by this function. 
+  '' means error.
+ */
+function doAllOptionsOfType(oData, key, dataFilePath, sTemplate) {
+  if (keyValuechecks(oData, key, dataFilePath)) {
+    return '';
+  }
+  
+  const opValue = oData[key][1];
+
+  // opValue should be a string
+  if (typeof(opValue) != 'string') {
+    console.warn(`!!! type value of "${
+          opValue
+        }" for 'allOptionsOfType' was not recognized for key ${
+          key
+        } of ${
+          getContextBasePath(dataFilePath)
+        }`);
+    return '';
+  }
+
+  // check the value to ensure it is a proper type
+  const typeBasePath = `${dataBasePath}/${opValue + 's'}`;
+  if (!fs.existsSync(typeBasePath)) {
+    console.warn(`!!! Unrecognized data type name "${opValue}" in the value for key ${key}.
+      The file ${getContextBasePath(dataFilePath)} will be skipped.`)
+    return '';
+  }
+
+  // find all the fileNames within the typeBasePath
+  const aFileNames = [];
+  for (const fName of fs.readdirSync(typeBasePath)) {
+    // will also include directory names so skip those.
+    if (fs.statSync(path.resolve(typeBasePath, fName)).isDirectory()) {
+      continue;
+    }
+    // skip non-data.js files
+    if (fName.lastIndexOf('.data.js') != fName.length - 8) {
+      continue;
+    }
+    aFileNames.push(fileNameToOption(path.basename(fName)));
+  };
+
+  return sTemplate.replace(new RegExp(`%${key}%`, 'gm'), aFileNames.sort().join('\n'));
 }
