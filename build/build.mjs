@@ -2,6 +2,10 @@
 
 import fs from 'fs';
 import path from 'path';
+
+// for debuging and adding lots of data set this to false.
+const fBuildAllFilesOnError = false; 
+
 const _dirname = import.meta.dirname;
 const dataBasePath = path.normalize(_dirname + '/data');
 const templateBasePath = path.normalize(_dirname + '/templates');
@@ -29,7 +33,7 @@ for (const filePath of aAllFilesInOrder) {
       "${
         getContextBasePath(filePath)
       }" will not be built.`)
-    continue; // on to next data file
+    if (fBuildAllFilesOnError) continue; else break;
   }
   let sData = fs.readFileSync(dataFilePath).toString();
   let oData = null;
@@ -40,7 +44,7 @@ for (const filePath of aAllFilesInOrder) {
   } catch (e) {
     console.warn(`!!! Parse error: ${dataFilePath}: ${e.message}
       Skipping this file.`);
-    continue; // on to next data file
+    if (fBuildAllFilesOnError) continue; else break;
   }
 
   if (!oData.template) {
@@ -48,7 +52,7 @@ for (const filePath of aAllFilesInOrder) {
         getContextBasePath(dataFilePath)
       } does not have the required template key defined.
       Skipping this file.`);
-    continue; // on to next data file
+    if (fBuildAllFilesOnError) continue; else break;
   }
   
   // find and load the sTemplateData object
@@ -60,7 +64,7 @@ for (const filePath of aAllFilesInOrder) {
         filePath
       } file, does not exist. 
       ${filePath} will not be built.`)
-    continue; // on to next data file
+    if (fBuildAllFilesOnError) continue; else break;
   }
   // read the template file
   let sTemplateData = fs.readFileSync(templateFilePath).toString();
@@ -153,7 +157,7 @@ for (const filePath of aAllFilesInOrder) {
             console.warn(`!!! Unrecognized data type name "${opValue}" in the value for key ${key}.
               The file ${getContextBasePath(dataFilePath)} will be skipped.`)
             fError = true;
-            continue;
+            if (fBuildAllFilesOnError) continue; else break;
           }
 
           const aFileNames = [];
